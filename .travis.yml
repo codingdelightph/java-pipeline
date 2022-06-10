@@ -8,7 +8,7 @@ before_script:
       -e DOCKER_PASSWORD=${DOCKER_PASSWORD} \
       -e GITHUB_URL=${GITHUB_URL} \
       --name java-pipeline \
-      edwardsdl/java-pipeline:latest
+      codingdelightph/sample-java:latest
 script:
   - docker exec java-pipeline /stages/01_clone.sh
   - docker exec java-pipeline /stages/02_build.sh
