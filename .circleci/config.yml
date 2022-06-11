@@ -1,20 +1,26 @@
-version: 2
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  build:
+  say-hello:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
     docker:
-      - image: edwardsdl/java-pipeline:latest
+      - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
-      - setup_remote_docker:
-          docker_layer_caching: true
+      - checkout
       - run:
-          name: Clone
-          command: /stages/01_clone.sh
-      - run:
-          name: Build
-          command: /stages/02_build.sh
-      - run:
-          name: Test
-          command: /stages/03_test.sh
-      - run:
-          name: Archive
-          command: /stages/04_archive.sh
+          name: "Say hello"
+          command: "echo Hello, World!"
+
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  say-hello-workflow:
+    jobs:
+      - say-hello
