@@ -16,6 +16,6 @@
     "repository": "codingdelightph/sample-java"
   },
   "deploy": {
-    "containerPort": 8080
+    "containerPort": 8081
   }
 }
