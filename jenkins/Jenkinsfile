@@ -20,9 +20,9 @@ pipeline {
         }
         stage("Build"){
             steps {
-                //dir("java-pipeline") {
+                dir("java-pipeline") {
                     sh "stages/02_build.sh"
-                //}
+                }
             }
         }
         stage("Test"){
