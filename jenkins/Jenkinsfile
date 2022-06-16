@@ -20,16 +20,16 @@ pipeline {
         }
         stage("Build"){
             steps {
-                dir("java-pipeline") {
+                //dir("java-pipeline") {
                     sh "stages/02_build.sh"
-                }
+                //}
             }
         }
         stage("Test"){
             steps {
-                dir("java-pipeline") {
+                //dir("java-pipeline") {
                      sh "stages/03_test.sh"
-                }
+                //}
            }
         }
         
@@ -37,10 +37,10 @@ pipeline {
             steps {
                    
                
-                dir("java-pipeline") {
+                //dir("java-pipeline") {
                      sh "chmod u+x stages/04_archive.sh"
                      sh "stages/04_archive.sh"
-                }
+                //}
            }
         }
         
