@@ -13,8 +13,9 @@ pipeline {
         }
         stage("Clone Repo"){
             steps {
-                 //sh "git clone ${GITHUB_URL}"
-                 sh "stages/01_clone.sh"
+                 dir("java-pipeline") {
+                    sh "stages/01_clone.sh"
+                }
             }
         }
         stage("Build"){
