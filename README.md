@@ -7,5 +7,5 @@ jenkins webhook http only
 one more try
 twice test
 change ip to public
-
+jenkins doesnt work
 
