@@ -6,6 +6,6 @@ Test if webhook runs in jenkins https ssl off
 jenkins webhook http only
 one more try
 twice test
-
+change ip to public
 
 
