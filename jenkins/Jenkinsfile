@@ -18,7 +18,9 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("codingdelightph/sample-java")
+        //app = docker.build("codingdelightph/sample-java")
+        sh " sudo docker build -t codingdelightph/sample-java ."
+        
     }
 
     stage('Test image') {
