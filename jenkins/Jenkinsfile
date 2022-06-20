@@ -23,8 +23,8 @@ pipeline {
             steps {
                 //dir("java-pipeline") {
                     sh "pwd"
-                    sh "ls"
-                    sh "stages/02_build.sh"
+                    sh "ls stages"
+                    sh "echo stages/02_build.sh"
                 //}
             }
         }
