@@ -19,7 +19,7 @@ node {
          * docker build on the command line */
 
         //app = docker.build("codingdelightph/sample-java")
-        sh " sudo docker build -t codingdelightph/sample-java ."
+        sh  "docker build -t codingdelightph/sample-java ."
         
     }
 
