@@ -13,14 +13,17 @@ pipeline {
         }
         stage("Clone Repo"){
             steps {
-                 dir("java-pipeline") {
-                    sh "echo stages/01_clone.sh"
-                }
+                 //dir("java-pipeline") {
+                    //sh "echo stages/01_clone.sh"
+                //}
+                sh "pwd"
             }
         }
         stage("Build"){
             steps {
                 //dir("java-pipeline") {
+                    sh "pwd"
+                    sh "ls"
                     sh "stages/02_build.sh"
                 //}
             }
