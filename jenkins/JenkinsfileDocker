@@ -1,0 +1,5 @@
+parameters {
+        string(defaultValue: 'codingdelightph',  name: 'DOCKER_USERNAME', trim: true)
+        string(defaultValue: '',  name: 'DOCKER_PASSWORD',  trim: true)
+        string(defaultValue: 'https://github.com/codingdelightph/java-pipeline.git',  name: 'GITHUB_URL',  trim: true)
+}
