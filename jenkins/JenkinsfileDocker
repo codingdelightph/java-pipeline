@@ -3,3 +3,23 @@ parameters {
         string(defaultValue: '',  name: 'DOCKER_PASSWORD',  trim: true)
         string(defaultValue: 'https://github.com/codingdelightph/java-pipeline.git',  name: 'GITHUB_URL',  trim: true)
 }
+
+docker.withRegistry('https://registry.hub.docker.com', 
+        'docker-hub-credentials') {
+        
+        docker.image('codingdelightph/sample-java').inside('ARGS') {
+             stage('Clone') {
+                   sh("echo /stages/01_clone.sh")
+             }
+             stage('Build') {
+                   sh("echo /stages/02_build.sh")
+             }
+             stage("Test") {
+                   sh("echo /stages/03_test.sh")
+             }
+             stage("Archive") {
+                   sh("echo /stages/04_archive.sh")
+             }
+       }
+          
+}
